@@ -13,7 +13,7 @@ $ # Your comment is now ready for pasting!
 
 ## Dependencies
 
-The `Password Locker` required `Python3.5` and the `pyperclip` module.
+`Commentify` requires `Python3.5` and the `pyperclip` module.
 
 ## Credits
 
