@@ -1,17 +1,25 @@
 #! /usr/bin/python3.5
 # Transform your plaintext into a comment.
 
-import sys, pyperclip
+import sys
+import pyperclip
 
-if len(sys.argv) != 1:
-    print('Usage: commentify')
+def commentify():
+    plaintext = pyperclip.paste()
+    plaintext = plaintext.split('\n')
 
-plaintext = pyperclip.paste()
-plaintext = plaintext.split('\n')
+    comment = ['/*\n']
+    for line in plaintext:
+        comment.append(' * ' + line + '\n')
 
-comment = '/*\n'
-for line in plaintext:
-    comment += ' * ' + line + '\n'
+    comment.append('*/')
+    return ''.join(comment)
 
-comment += '*/'
-pyperclip.copy(comment)
+def main():
+    if len(sys.argv) != 1:
+        print('Usage: commentify')
+        sys.exit(1)
+
+    pyperclip.copy(commentify())
+
+main()
