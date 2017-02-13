@@ -6,9 +6,35 @@ Transform your plaintext into programming-friendly comment syntax.
 
 ```
 $ # Copy your plaintext into the clipboard
-$ chmod +x commentify.py
+$ chmod +x commentify.py [language]
 $ ./commentify.py
 $ # Your comment is now ready for pasting!
+```
+
+## Language Support
+
+1.) C style multi-line comments
+
+```
+$  #This is the default behaviour
+$ ./commentify.py
+# Result:
+/*
+ * Foo
+ * Bar
+ * Baz
+*/
+```    
+
+2.) Python
+```
+$ ./commentify.py python
+# Result:
+###
+ # Foo
+ # Bar
+ # Baz
+###
 ```
 
 ## Dependencies
