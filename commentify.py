@@ -4,22 +4,30 @@
 import sys
 import pyperclip
 
-def commentify():
-    plaintext = pyperclip.paste()
-    plaintext = plaintext.split('\n')
+def commentify(lang):
+    plaintext = pyperclip.paste().split('\n')
 
-    comment = ['/*\n']
+    if lang == 'python':
+        comment = ['###\n']
+        char = ' # '
+        end = '###\n'
+
+    else:
+        comment = ['/*\n']
+        char = ' * '
+        end = '*/\n'
+
     for line in plaintext:
-        comment.append(' * ' + line + '\n')
+        comment.append(char + line + '\n')
 
-    comment.append('*/')
+    comment.append(end)
     return ''.join(comment)
 
 def main():
-    if len(sys.argv) != 1:
-        print('Usage: commentify')
+    if len(sys.argv) > 2:
+        print('Usage: commentify [language]')
         sys.exit(1)
 
-    pyperclip.copy(commentify())
+    pyperclip.copy(commentify(sys.argv[1]))
 
 main()
