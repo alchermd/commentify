@@ -27,7 +27,7 @@ def main():
     if len(sys.argv) > 2:
         print('Usage: commentify [language]')
         sys.exit(1)
-
-    pyperclip.copy(commentify(sys.argv[1]))
+    language = sys.argv[1] if len(sys.argv) > 1 else 0
+    pyperclip.copy(commentify(language))
 
 main()
