@@ -5,6 +5,10 @@ import pyperclip
 
 
 def commentify(lang):
+    """ Grabs the text from the clipboard and transforms it into comments.
+    lang -> A string that signifies the programming language to base
+    the comment format.
+    """
     plaintext = pyperclip.paste().split('\n')
 
     if lang == 'python':
@@ -25,6 +29,8 @@ def commentify(lang):
 
 
 def main():
+    """ Main method of the program. Ensures proper usage
+    and calls the commentify function. """
     if len(sys.argv) > 2:
         print('Usage: commentify [language]')
         sys.exit(1)
