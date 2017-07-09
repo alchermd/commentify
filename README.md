@@ -39,7 +39,9 @@ $ ./commentify.py python
 
 ## Dependencies
 
-`Commentify` requires `Python3.5` and the `pyperclip` module.
+`commentify` requires `Python3.5` and the `pyperclip` module. 
+
+Linux users should get a copy/paste mechanism for `commentify` to work. [Instructions here](https://pyperclip.readthedocs.io/en/latest/introduction.html#not-implemented-error)
 
 ## Credits
 
