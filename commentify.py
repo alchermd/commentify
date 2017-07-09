@@ -1,8 +1,8 @@
 #! /usr/bin/python3.5
-# Transform your plaintext into a comment.
-
+"""" Transform your plaintext into a comment. """
 import sys
 import pyperclip
+
 
 def commentify(lang):
     plaintext = pyperclip.paste().split('\n')
@@ -23,6 +23,7 @@ def commentify(lang):
     comment.append(end)
     return ''.join(comment)
 
+
 def main():
     if len(sys.argv) > 2:
         print('Usage: commentify [language]')
@@ -30,4 +31,6 @@ def main():
     language = sys.argv[1] if len(sys.argv) > 1 else 0
     pyperclip.copy(commentify(language))
 
-main()
+
+if __name__ == '__main__':
+    main()
