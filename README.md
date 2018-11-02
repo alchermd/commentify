@@ -2,6 +2,10 @@
 
 Transform your plaintext into programming-friendly comment syntax.
 
+## Update (2018)
+
+This is one of my earlier programs that I used intensively. I didn't know much about IDE's and text editors back then, so it's funny to see how all of what the program does can be done with a simple `CTRL + /`. Thanks for reading!
+
 ## Usage
 
 ```
